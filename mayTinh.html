@@ -115,28 +115,33 @@
             $('.box-button button.divide').prop('disabled', true); // Vô hiệu hoá nút chia
             $('.box-button button.equal').prop('disabled', true); // Vô hiệu hoá nút bằng
         });
+
         $('.box-button button.number, .operation ').on('click', function() {
-            $char = $(this).html();
-            $value_calculation = $('.box-calculation').val();
-            $('.box-calculation').val($value_calculation + $char);
-            $('.box-button button.operation').prop('disabled', false);
-            $('.box-button button.equal').removeAttr('disabled');
-        })
+                $char = $(this).html();
+                $value_calculation = $('.box-calculation').val();
+                $('.box-calculation').val($value_calculation + $char);
+                $('.box-button button.operation').prop('disabled', false);
+                $('.box-button button.equal').removeAttr('disabled');
+            })
+            // Logic dấu chấm
         $('.box-button button.dot').on('click', function() {
-            $char = $(this).html();
-            $value_calculation = $('.box-calculation').val();
-            $('.box-calculation').val($value_calculation + $char);
-            $('.operation').prop('disabled', true);
-            $(this).prop('disabled', true);
-        })
+                $char = $(this).html();
+                $value_calculation = $('.box-calculation').val();
+                $('.box-calculation').val($value_calculation + $char);
+                $('.operation').prop('disabled', true);
+                $(this).prop('disabled', true);
+            })
+            // Xóa sạch
         $('.refresh').on('click', function() {
-            $('.box-calculation').val('');
-            $('.box-result').val('');
-        })
+                $('.box-calculation').val('');
+                $('.box-result').val('');
+            })
+            // Xóa 1 phần tử
         $('.del').on('click', function() {
-            $string = $('.box-calculation').val();
-            $('.box-calculation').val($string.substring(0, $string.length - 1));
-        })
+                $string = $('.box-calculation').val();
+                $('.box-calculation').val($string.substring(0, $string.length - 1));
+            })
+            // Kết quả
         $('.box-button button.equal').on('click', function() {
             $result = $('.box-calculation').val(); // Lấy chuỗi giá trị trong ô phép tính
             $('.box-result').val(eval($result)); // Hiển thị kết quả trong ô kết quả

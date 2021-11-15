@@ -7,14 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .toTinh {
+            text-align: center;
+        }
+        
+        .ask {
+            color: pink;
+        }
+        
+        .ans {
+            width: 100px;
+            height: 50px;
+            margin-left: 30px;
+            background-color: salmon;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('input').click(function() {
+                var inputValue = $(this).attr("value");
+                var targetBox = $("." + inputValue);
+                $(".box").not(targetBox).hide();
+                $(targetBox).show();
+            });
+        });
+    </script>
 </head>
 
 <body>
     <table border="1">
         <tr>
-            <td>TD #0</td>
-            <td>TD #1</td>
-            <td>TD #2</td>
+            <td>TD </td>
+            <td>TD </td>
+            <td>TD </td>
         </tr>
         <tr>
             <td>TD #3</td>
@@ -32,21 +60,29 @@
         <label><input type="radio" name="colorRadio" value="green"> green</label>
         <label><input type="radio" name="colorRadio" value="blue"> blue</label>
     </div>
-    <div class="red box">Bạn đã chọn <strong>red radio button</strong></div>
-    <div class="green box">Bạn đã chọn <strong>green radio button</strong> </div>
-    <div class="blue box">Bạn đã chọn <strong>blue radio button</strong></div>
+    <div class="red box raBut">Bạn đã chọn <strong>red radio button</strong></div>
+    <div class="green box raBut">Bạn đã chọn <strong>green radio button</strong> </div>
+    <div class="blue box raBut">Bạn đã chọn <strong>blue radio button</strong></div>
+
+    <div class="toTinh">
+        <h1 class="ask">Em có yêu anh không ???</h1>
+        <button class="ans yes">Yessss</button>
+        <button class="ans no">Noo</button>
+    </div>
 
     <script>
-        $("td:lt(3)").css("color", "yellow");
+        $("td:gt(4)").css("color", "yellow");
 
         // Ẩn hiện nội dung
-        $(document).ready(function() {
-            $('input[type="radio"]').click(function() {
-                var inputValue = $(this).attr("value");
-                var targetBox = $("." + inputValue);
-                $(".box").not(targetBox).hide();
-                $(targetBox).show();
-            });
+
+
+
+
+        // Thay đổi nội dung
+        $('.no').hover(function() {
+            $(this).html('Yesss');
+        }, function() {
+            $(this).html('No');
         });
     </script>
 </body>
