@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .toTinh {
+            text-align: center;
+        }
+        
+        .ask {
+            color: pink;
+        }
+        
+        .ans {
+            width: 100px;
+            height: 50px;
+            margin-left: 30px;
+            background-color: salmon;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        .oneClick {
+            background-color: black;
+            color: white;
+            width: 300px;
+            height: 70px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('.no').hover(function() {
+                $(this).html('Yesss');
+            }, function() {
+                $(this).html('No');
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <!-- hover -->
+    <h2>Khi hover vào chữ Noo sẽ chuyển thành chữ Yesss</h2>
+    <div class="toTinh">
+        <h1 class="ask">Em có yêu anh không ???</h1>
+        <button class="ans yes">Yessss</button>
+        <button class="ans no">Noo</button>
+    </div>
+    <!-- Tắt sự kiện -->
+    <h2>Chỉ cho bấm 1 lần hiện thông báo rồi tắt sự kiện click</h2>
+    <div class="clickEvent">
+        <button class="oneClick">Chỉ được bấm một lần</button>
+    </div>
+
+    <script>
+        $('.oneClick').on("click", function() {
+            alert("Bạn đã click 1 lần và mình không cho phép bạn click lần nữa đâu nhé :))))))");
+            $(".oneClick").off("click");
+            $('.oneClick').css("background-color", "red");
+        });
+    </script>
+</body>
+
+</html>

@@ -17,14 +17,14 @@
         $(document).ready(function() {
             // Ẩn các thẻ p khi click vào button hide
             $(".hide-btn").click(function() {
-                $("div").fadeOut("slow", function() {
+                $("div").hide("slow", function() {
                     alert("Hàm hide đã chạy xong");
                 });
             });
 
             // Hiện các thẻ p khi click vào button show
             $(".show-btn").click(function() {
-                $("div").fadeIn("slow", function() {
+                $("div").show("slow", function() {
                     alert("Hàm show đã chạy xong");
                 });
             });

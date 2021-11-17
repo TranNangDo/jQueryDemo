@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .title {
+            display: flex;
+            gap: 20px;
+        }
+        
+        td {
+            width: 50px;
+            text-align: center;
+        }
+        
+        button {
+            width: 70px;
+            height: 40px;
+            color: black;
+            background-color: yellow;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <tr class="title">
+            <td>Hãy</td>
+            <td>học</td>
+            <td>thật</td>
+            <td>chăm</td>
+            <td>chỉ</td>
+            <td>nhé</td>
+            <td>bạn</td>
+            <td>nhỏ</td>
+            <td>ơiiiiiii!</td>
+        </tr>
+    </table>
+    <h2>Lấy ra chữ ở ô thứ 3 ???</h2>
+    <button class="find">Lấy luôn</button>
+
+    <script>
+        $('.find').click(function() {
+            var tdVal3 = $("td:eq(2)").text();
+            alert("Ô thứ 3 chứa chữ : " + tdVal3);
+        });
+    </script>
+</body>
+
+</html>
